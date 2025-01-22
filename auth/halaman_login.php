@@ -53,11 +53,28 @@ if (isset($_POST['submit'])) {
                                 <div class="invalid-feedback">Masukkan username.</div>
                             </div>
 
-                            <div class="col-12">
+                        <div class="col-12">
                                 <label for="password_user" class="form-label">Password</label>
-                                <input type="password" name="password_user" class="form-control" id="password_user" required>
+                                <div class="input-group">
+                                    <input type="password" name="password_user" class="form-control" id="password_user" required>
+                                    <button type="button" class="btn btn-outline-secondary" id="togglePassword" style="padding: 0.25rem 0.5rem;">
+                                        <i class="bi bi-eye" id="toggleIcon"></i>
+                                    </button>
+                                </div>
                                 <div class="invalid-feedback">Masukkan Password!</div>
                             </div>
+                            <script>
+                                document.getElementById('togglePassword').addEventListener('click', function () {
+                                    const passwordInput = document.getElementById('password_user');
+                                    const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                                    passwordInput.setAttribute('type', passwordType);
+                                    
+                                    // Ganti ikon berdasarkan tipe password
+                                    const toggleIcon = document.getElementById('toggleIcon');
+                                    toggleIcon.classList.toggle('bi-eye'); // Ganti ikon mata terbuka
+                                    toggleIcon.classList.toggle('bi-eye-slash'); // Ganti ikon mata tertutup
+                                });
+                            </script>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100" name="submit" type="submit">Login</button>
                             </div>
@@ -67,7 +84,20 @@ if (isset($_POST['submit'])) {
 
                 <!-- Bagian kanan: Gambar dan Nama Website -->
                 <div class="d-flex flex-column align-items-center text-center flex-fill">
-                    <img src="assets/img/piq.png" width="180" alt="Logo PIQ" class="mb-4">
+                <img src="assets/img/piq.png" width="180" alt="Logo PIQ" class="mb-4" id="logo" style="animation: open-close 2s ease-in-out infinite;">
+                <style>
+                    @keyframes open-close {
+                        0% {
+                            transform: rotateY(0deg); /* Posisi awal */
+                        }
+                        50% {
+                            transform: rotateY(90deg); /* Berputar hingga 90 derajat */
+                        }
+                        100% {
+                            transform: rotateY(0deg); /* Kembali ke posisi awal */
+                        }
+                    }
+                </style>
                     <h5 class="card-title fs-5">E-PIQ<br>Pengarsipan Surat, Inventaris, dan Mutasi Barang Pesantren Ilmu Al-Qur'an</h5>
                     <p class="text-muted">Pesantren Ilmu AL-Qur'an</p>
                 </div>

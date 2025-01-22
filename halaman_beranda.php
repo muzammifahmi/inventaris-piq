@@ -7,7 +7,7 @@
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav> -->
-  </div><!-- End Page Title -->
+  </div><!-- End Page Title -->  
 
   <section class="section dashboard">
     <div class="row">

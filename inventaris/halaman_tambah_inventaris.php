@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 ?>
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Tambah Surat</h1>
+        <h1>Tambah Inventaris</h1>
         <!-- <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>

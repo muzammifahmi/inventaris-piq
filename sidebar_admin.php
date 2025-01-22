@@ -10,7 +10,8 @@
             </a>
         </li><!-- End Tampil Surat Nav -->
         <li class="nav-item">
-            <a id="kode_surat" class="nav-link collapsed" data-bs-target="#kode-surat-nav" data-bs-toggle="collapse" href="#">
+            <a id="kode_surat" class="nav-link collapsed" data-bs-target="#kode-surat-nav" data-bs-toggle="collapse"
+                href="#">
                 <i class="ri ri-mail-line"></i><span>Kode Surat</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="kode-surat-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -84,7 +85,8 @@
                     </a>
                 </li>
                 <li>
-                    <a id="tampil_peminjaman_inventaris" href="index.php?page=inventaris&item=tampil_peminjaman_inventaris">
+                    <a id="tampil_peminjaman_inventaris"
+                        href="index.php?page=inventaris&item=tampil_peminjaman_inventaris">
                         <i class="bi bi-circle"></i><span>Data Peminjaman Inventaris</span>
                     </a>
                 </li>
@@ -102,8 +104,23 @@
                 <span>Laporan</span>
             </a>
         </li><!-- End Tampil Surat Nav -->
+
+        <li class="nav-item">
+            <a id="siswa" class="nav-link collapsed" data-bs-target="#siswa-nav" data-bs-toggle="collapse" href="#">
+                <i class="ri-book-2-line"></i><span>Siswa</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="siswa-nav" class="nav-content collapse" data-bs-target="#sidebar-nav">
+                <li>
+                <a id="tampil-siswa" href="index.php?page=siswa&item=tampil_siswa">
+                    <i class="bi bi-circle"></i><span>Data Siswa</span>
+                </a>
+                </li>
+                <li>
+                <a id="tambah-siswa" href="index.php?page=siswa&item=tambah_siswa">
+                    <i class="bi bi-circle"></i><span>Tambah Siswa</span>
+                </a>
+                </li>
+        </li>
     </ul>
-    <div class="footer">
-        <p>© 2024 &nbsp<a href="index.php?page=pengembang">Tim Pengembang</a></p>
-    </div>
+    <?php include_once 'versi.php' ?>
 </aside><!-- End Sidebar-->

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 
     // Menghindari SQL Injection dengan menggunakan prepared statements
     $stmt = $mysqli->prepare("INSERT INTO tabel_user (nama_user, username_user, password_user, status_user) VALUES (?, ?, ?, ?)");
-    
+
     // Bind parameter ke dalam prepared statement
     $stmt->bind_param("ssss", $nama_user, $username_user, $password_user, $status_user);
 
@@ -62,10 +62,28 @@ if (isset($_POST['submit'])) {
                     <div class="row mb-3">
                         <label for="password_user" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password_user" name="password_user" required>
-                            <div class="invalid-feedback">Harap isi Password.</div>
+                            <div class="input-group">
+                                <input type="password" name="password_user" class="form-control" id="password_user" required>
+                                <button type="button" class="btn btn-outline-secondary" id="togglePassword" style="padding: 0.25rem 0.5rem;">
+                                    <i class="bi bi-eye" id="toggleIcon"></i>
+                                </button>
+                            </div>
+
+                            <div class="invalid-feedback">Masukkan Password!</div>
                         </div>
                     </div>
+                    <script>
+                        document.getElementById('togglePassword').addEventListener('click', function () {
+                            const passwordInput = document.getElementById('password_user');
+                            const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                            passwordInput.setAttribute('type', passwordType);
+
+                            // Ganti ikon berdasarkan tipe password
+                            const toggleIcon = document.getElementById('toggleIcon');
+                            toggleIcon.classList.toggle('bi-eye'); // Ganti ikon mata terbuka
+                            toggleIcon.classList.toggle('bi-eye-slash'); // Ganti ikon mata tertutup
+                        });
+                    </script>
                     <div class="row mb-3">
                         <label for="status_user" class="col-sm-2 col-form-label">Status User</label>
                         <div class="col-sm-10">

@@ -79,6 +79,16 @@ if (isset($_SESSION['id_user'])) {
         include_once "inventaris/halaman_delete_peminjaman_inventaris.php";
     else if ($_GET['page'] == 'inventaris' && $_GET['item'] == 'detail_peminjaman_inventaris')
         include_once "inventaris/halaman_detail_peminjaman_inventaris.php";
+
+    else if ($_GET['page'] == 'siswa' && $_GET['item'] == 'tambah_siswa')
+        include_once "siswa/halaman_tambah_siswa.php";
+    else if ($_GET['page'] == 'siswa' && $_GET['item'] == 'tampil_siswa')
+        include_once "siswa/halaman_tampil_siswa.php";
+    else if ($_GET['page'] == 'siswa' && $_GET['item'] == 'delete_siswa')
+        include_once "siswa/halaman_delete_siswa.php";
+    else if ($_GET['page'] == 'siswa' && $_GET['item'] == 'edit_siswa')
+        include_once "siswa/halaman_edit_siswa.php";
+    
     else if ($_GET['page'] == 'keluar')
         include_once "auth/halaman_logout.php";
     else if ($_GET['page'] == 'laporan')

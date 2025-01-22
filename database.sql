@@ -222,3 +222,12 @@ INSERT INTO `tabel_user` VALUES
 INSERT INTO `tabel_user` VALUES 
 (NULL, 'Achmad Muzammi Fahmi', 'admin', '$2y$10$pZYsmMxGQITaGgCeL33RwuquuRcd2yR3bOxlQQI.8F3K9S0EkBDxy', 'ADMIN');
 password = admin
+
+CREATE TABLE tabel_siswa(   
+    id_siswa INT NOT NULL AUTO_INCREMENT,
+    nama_siswa VARCHAR(255) NOT NULL,
+    tanggal_lahir DATE NOT NULL,
+    tahun_masuk INT(4) NOT NULL,
+    alamat_siswa VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id_siswa)
+    );

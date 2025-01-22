@@ -10,7 +10,8 @@
             </a>
         </li><!-- End Tampil Surat Nav -->
         <li class="nav-item">
-            <a id="surat_keluar" class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a id="surat_keluar" class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                href="#">
                 <i class="ri ri-mail-line"></i><span>Surat Keluar</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -28,7 +29,8 @@
         </li><!-- End Components Nav -->
 
         <li class="nav-item" id="x">
-            <a id="surat_masuk" class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+            <a id="surat_masuk" class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
+                href="#">
                 <i class="ri-mail-add-line"></i><span>Surat Masuk</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -82,7 +84,8 @@
             </ul>
         </li><!-- End Forms Nav -->
         <li class="nav-item">
-            <a id="inventaris" class="nav-link collapsed" data-bs-target="#inventaris-nav" data-bs-toggle="collapse" href="#">
+            <a id="inventaris" class="nav-link collapsed" data-bs-target="#inventaris-nav" data-bs-toggle="collapse"
+                href="#">
                 <i class="ri-book-2-line"></i><span>Inventaris</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="inventaris-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -104,7 +107,5 @@
             </ul>
         </li><!-- End Components Nav -->
     </ul>
-    <div class="footer">
-        <p>© 2024 &nbsp<a href="index.php?page=pengembang">Tim Pengembang</a></p>
-    </div> 
+    <?php include_once 'versi.php' ?>
 </aside><!-- End Sidebar-->

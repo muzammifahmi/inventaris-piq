@@ -11,7 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/piq.png" rel="icon">
+  <!-- <link href="assets/img/piq.png" rel="icon"> -->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -30,6 +30,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.0
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -37,7 +40,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
 
 <body>
 
