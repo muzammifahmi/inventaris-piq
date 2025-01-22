@@ -2,40 +2,40 @@
 
 if (isset($_POST['submit'])) {
     require_once "koneksi.php";
-    require_once "utils.php";
 
+    // Menangkap data dari form
     $nama_user = $_POST['nama_user'];
     $username_user = $_POST['username_user'];
     $password_user = $_POST['password_user'];
     $status_user = $_POST['status_user'];
 
-    $sql = "
-        INSERT INTO tabel_user (
-            nama_user, 
-            username_user, 
-            password_user, 
-            status_user 
-        ) VALUES (
-            '$nama_user', 
-            '$username_user',
-            '$password_user', 
-            '$status_user' 
-        )";
+    // Pastikan password dienkripsi menggunakan password_hash jika diberikan
+    if (!empty($password_user)) {
+        $password_user = password_hash($password_user, PASSWORD_DEFAULT); // Enkripsi password
+    }
 
-    if ($mysqli->query($sql) === TRUE) echo "<script>alert('User berhasil ditambahkan.')</script>";
-    else echo "Error: " . $sql . "<br>" . $mysqli->error;
+    // Menghindari SQL Injection dengan menggunakan prepared statements
+    $stmt = $mysqli->prepare("INSERT INTO tabel_user (nama_user, username_user, password_user, status_user) VALUES (?, ?, ?, ?)");
+    
+    // Bind parameter ke dalam prepared statement
+    $stmt->bind_param("ssss", $nama_user, $username_user, $password_user, $status_user);
+
+    // Eksekusi query
+    if ($stmt->execute()) {
+        echo "<script>alert('User berhasil ditambahkan.')</script>";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Menutup statement setelah selesai
+    $stmt->close();
 }
-
 ?>
+
+<!-- Form HTML untuk menambahkan user -->
 <main id="main" class="main">
     <div class="pagetitle">
         <h1>Tambah User</h1>
-        <!-- <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav> -->
     </div><!-- End Page Title -->
     <br>
     <section class="section dashboard">
@@ -49,27 +49,21 @@ if (isset($_POST['submit'])) {
                         <label for="nama_user" class="col-sm-2 col-form-label">Nama User</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nama_user" name="nama_user" required>
-                            <div class="invalid-feedback">
-                                Harap isi Nama User.
-                            </div>
+                            <div class="invalid-feedback">Harap isi Nama User.</div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="username_user" class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="username_user" name="username_user" required>
-                            <div class="invalid-feedback">
-                                Harap isi Username.
-                            </div>
+                            <div class="invalid-feedback">Harap isi Username.</div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="password_user" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="password_user" name="password_user" required>
-                            <div class="invalid-feedback">
-                                Harap isi Password.
-                            </div>
+                            <div class="invalid-feedback">Harap isi Password.</div>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -79,9 +73,7 @@ if (isset($_POST['submit'])) {
                                 <option value="ADMIN">Admin</option>
                                 <option value="PETUGAS">Petugas</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Harap isi Status User.
-                            </div>
+                            <div class="invalid-feedback">Harap isi Status User.</div>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -89,11 +81,8 @@ if (isset($_POST['submit'])) {
                             <button type="submit" name="submit" class="btn btn-primary">Tambah User</button>
                         </div>
                     </div>
-
                 </form><!-- End General Form Elements -->
-
             </div>
         </div>
     </section>
-
 </main><!-- End #main -->

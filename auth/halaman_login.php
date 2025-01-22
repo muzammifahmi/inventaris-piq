@@ -5,16 +5,28 @@ if (isset($_POST['submit'])) {
     $username_user = $_POST['username_user'];
     $password_user = $_POST['password_user'];
 
-    $sql = "SELECT * FROM tabel_user WHERE username_user='$username_user' AND password_user='$password_user'";
-    if ($user = $mysqli->query($sql)) {
-        $user = $user->fetch_assoc();
-        if (!is_null($user)) {
+    // Query untuk mendapatkan hash password dari database
+    $sql = "SELECT * FROM tabel_user WHERE username_user=?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('s', $username_user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        // Verifikasi password
+        if (password_verify($password_user, $user['password_user'])) {
             $_SESSION['nama_user'] = $user['nama_user'];
             $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['status_user'] = $user['status_user'];
             header('Location: index.php');
-        } else echo "<script>alert('Username atau Password Salah!');</script>";
-    } else echo "Error: " . $sql . "<br>" . $mysqli->error;
+        } else {
+            echo "<script>alert('Username atau Password Salah!');</script>";
+        }
+    } else {
+        echo "<script>alert('Username atau Password Salah!');</script>";
+    }
 }
 ?>
 
@@ -56,7 +68,7 @@ if (isset($_POST['submit'])) {
                 <!-- Bagian kanan: Gambar dan Nama Website -->
                 <div class="d-flex flex-column align-items-center text-center flex-fill">
                     <img src="assets/img/piq.png" width="180" alt="Logo PIQ" class="mb-4">
-                    <h5 class="card-title fs-5">Aplikasi Pengarsipan Surat, Inventaris, dan Mutasi Barang</h5>
+                    <h5 class="card-title fs-5">E-PIQ<br>Pengarsipan Surat, Inventaris, dan Mutasi Barang Pesantren Ilmu Al-Qur'an</h5>
                     <p class="text-muted">Pesantren Ilmu AL-Qur'an</p>
                 </div>
 

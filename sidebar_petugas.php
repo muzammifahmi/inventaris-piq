@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="index.php">
                 <i class="bi bi-grid"></i>
                 <span>Beranda</span>
             </a>
@@ -104,5 +104,7 @@
             </ul>
         </li><!-- End Components Nav -->
     </ul>
-
+    <div class="footer">
+        <p>© 2024 &nbsp<a href="index.php?page=pengembang">Tim Pengembang</a></p>
+    </div> 
 </aside><!-- End Sidebar-->

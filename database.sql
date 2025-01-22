@@ -218,3 +218,7 @@ CREATE TABLE `tabel_user` (
 INSERT INTO `tabel_user` VALUES 
 (null, 'Achmad Muzammi Fahmi', 'admin', 'admin' , 'ADMIN'),
 (null, 'Ahmad Nabil Mujaddid', 'nabil', 'nabil' , 'PETUGAS');
+
+INSERT INTO `tabel_user` VALUES 
+(NULL, 'Achmad Muzammi Fahmi', 'admin', '$2y$10$pZYsmMxGQITaGgCeL33RwuquuRcd2yR3bOxlQQI.8F3K9S0EkBDxy', 'ADMIN');
+password = admin

@@ -103,5 +103,7 @@
             </a>
         </li><!-- End Tampil Surat Nav -->
     </ul>
-
+    <div class="footer">
+        <p>© 2024 &nbsp<a href="index.php?page=pengembang">Tim Pengembang</a></p>
+    </div>
 </aside><!-- End Sidebar-->
