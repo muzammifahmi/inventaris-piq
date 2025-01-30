@@ -84,20 +84,7 @@ if (isset($_POST['submit'])) {
 
                 <!-- Bagian kanan: Gambar dan Nama Website -->
                 <div class="d-flex flex-column align-items-center text-center flex-fill">
-                <img src="assets/img/piq.png" width="180" alt="Logo PIQ" class="mb-4" id="logo" style="animation: open-close 2s ease-in-out infinite;">
-                <style>
-                    @keyframes open-close {
-                        0% {
-                            transform: rotateY(0deg); /* Posisi awal */
-                        }
-                        50% {
-                            transform: rotateY(90deg); /* Berputar hingga 90 derajat */
-                        }
-                        100% {
-                            transform: rotateY(0deg); /* Kembali ke posisi awal */
-                        }
-                    }
-                </style>
+                <img src="assets/img/piq.png" width="180" alt="Logo PIQ" class="mb-4" id="logo">
                     <h5 class="card-title fs-5">E-PIQ<br>Pengarsipan Surat, Inventaris, dan Mutasi Barang Pesantren Ilmu Al-Qur'an</h5>
                     <p class="text-muted">Pesantren Ilmu AL-Qur'an</p>
                 </div>

@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
         $target_file = $target_dir . $file_name;
         $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        $sizeOk = checkFileSize($_FILES["dokumen_surat"]["size"], 500000);
+        $sizeOk = checkFileSize($_FILES["dokumen_surat"]["size"], 5000000);
         $typeOk = allowedFileType($file_type, ['pdf']);
 
         // Check if $uploadOk is set to 0 by an error

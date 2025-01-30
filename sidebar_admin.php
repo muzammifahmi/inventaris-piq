@@ -60,7 +60,8 @@
                     </a>
                 </li>
             </ul>
-        </li><!-- End Forms Nav -->
+        </li>
+        <!-- End Forms Nav -->
         <li class="nav-item" id="x">
             <a id="agenda" class="nav-link collapsed" data-bs-target="#agenda-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-calendar-check"></i><span>Agenda</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -96,31 +97,36 @@
                     </a>
                 </li>
             </ul>
-        </li><!-- End Components Nav -->
+        </li>
+        <!-- End Components Nav -->
 
         <li class="nav-item">
             <a id="laporan" class="nav-link collapsed" href="index.php?page=laporan">
                 <i class="bi bi-journal-text"></i>
                 <span>Laporan</span>
             </a>
-        </li><!-- End Tampil Surat Nav -->
+        </li>
+        <!-- End Tampil Surat Nav -->
 
         <li class="nav-item">
             <a id="siswa" class="nav-link collapsed" data-bs-target="#siswa-nav" data-bs-toggle="collapse" href="#">
                 <i class="ri-book-2-line"></i><span>Siswa</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="siswa-nav" class="nav-content collapse" data-bs-target="#sidebar-nav">
+            <ul id="siswa-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                <a id="tampil-siswa" href="index.php?page=siswa&item=tampil_siswa">
-                    <i class="bi bi-circle"></i><span>Data Siswa</span>
-                </a>
+                    <a id="tampil_siswa" href="index.php?page=siswa&item=tampil_siswa">
+                        <i class="bi bi-circle"></i><span>Data Siswa</span>
+                    </a>
                 </li>
                 <li>
-                <a id="tambah-siswa" href="index.php?page=siswa&item=tambah_siswa">
-                    <i class="bi bi-circle"></i><span>Tambah Siswa</span>
-                </a>
+                    <a id="tambah_siswa"
+                        href="index.php?page=siswa&item=tambah_siswa">
+                        <i class="bi bi-circle"></i><span>Tambah Siswa</span>
+                    </a>
                 </li>
+            </ul>
         </li>
+
     </ul>
     <?php include_once 'versi.php' ?>
 </aside><!-- End Sidebar-->
