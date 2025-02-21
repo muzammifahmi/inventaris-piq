@@ -18,7 +18,7 @@
               <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Nomor Surat</th>
+                  <th scope="col">Nomor Surat</th>                  
                   <th scope="col">Tanggal Surat</th>
                   <th scope="col">Perihal</th>
                   <th scope="col">Sifat Surat</th>
