@@ -229,5 +229,6 @@ CREATE TABLE tabel_siswa(
     tanggal_lahir DATE NOT NULL,
     tahun_masuk INT(4) NOT NULL,
     alamat_siswa VARCHAR(255) NOT NULL,
+    foto_siswa VARCHAR(255) NOT NULL,
     PRIMARY KEY(id_siswa)
     );
