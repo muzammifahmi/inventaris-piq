@@ -51,6 +51,7 @@
                     <td class="d-flex justify-content-center gap-1">
                       <a href="index.php?page=siswa&item=edit_siswa&id_siswa=<?= $row['id_siswa']; ?>" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
                       <a href="index.php?page=siswa&item=delete_siswa&id_siswa=<?= $row['id_siswa']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash"></i></a>
+                      <a href="index.php?page=siswa&item=cetak_siswa&id_siswa=<?= $row['id_siswa']; ?>" class="btn btn-primary"><i class="bi bi-printer"></i> Cetak KTS</a>
                     </td>
                   </tr>
                 <?php endwhile; ?>
