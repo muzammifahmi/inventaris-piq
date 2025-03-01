@@ -91,6 +91,7 @@ if (isset($_SESSION['id_user'])) {
     else if ($_GET['page'] == 'siswa' && $_GET['item'] == 'cetak_siswa')
         include_once "siswa/halaman_cetak_siswa.php";
     
+
     else if ($_GET['page'] == 'keluar')
         include_once "auth/halaman_logout.php";
     else if ($_GET['page'] == 'laporan')

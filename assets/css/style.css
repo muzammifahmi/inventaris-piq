@@ -1084,19 +1084,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* CETAK KTS */
-.kartu {
-  width: 350px;
-  border: 2px solid #000;
-  padding: 15px;
-  text-align: center;
+body {
+  background: url('assets/img/piq.png') no-repeat center center fixed;
+  background-size: cover;
   font-family: Arial, sans-serif;
 }
-.foto {
-  width: 100px;
-  height: 120px;
-  background: #ccc;
-  margin: auto;
+
+.kts-container {
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.btn-print {
+
+.header-kts {
+  background: #007bff;
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-kts h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.text-center {
+  text-align: center;
+  font-weight: bold;
   margin-top: 10px;
+}
+
+.santri-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.santri-info .left {
+  flex: 1;
+  text-align: center;
+}
+
+.santri-info img {
+  border-radius: 5px;
+  border: 2px solid #007bff;
+}
+
+.santri-info table {
+  flex: 2;
+  border: 2px solid #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  margin-left: 15px;
+}
+
+.santri-info td {
+  padding: 5px;
+  font-size: 14px;
 }
